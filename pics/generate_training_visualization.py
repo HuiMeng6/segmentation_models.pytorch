@@ -90,10 +90,11 @@ for spine in ax4.spines.values():
     spine.set_linewidth(0.8)
     spine.set_color("#AAAAAA")
 
-# Combined legend at top of lower panel
+# Combined legend — placed at lower right to avoid overlap with the LR line
+# (LR steps down to its minimum at epoch 25, and mIoU lines rise above this region)
 handles = [l3, l4, l5]
-ax3.legend(handles=handles, loc="upper left", fontsize=10,
-           framealpha=0.9, edgecolor="#CCCCCC")
+ax3.legend(handles=handles, loc="lower right", fontsize=10,
+           framealpha=0.9, edgecolor="#CCCCCC", ncol=1)
 
 # ── Save ──────────────────────────────────────────────────────────────────────
 out_path = "/home/runner/work/segmentation_models.pytorch/segmentation_models.pytorch/pics/training_visualization.png"
